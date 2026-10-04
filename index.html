@@ -11,6 +11,7 @@
 <link rel="manifest" href="manifest.json">
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -18,9 +19,11 @@
 body {
   margin: 0;
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 16px;
 
   font-family: Arial, sans-serif;
@@ -28,8 +31,8 @@ body {
 
   background:
     linear-gradient(
-      rgba(5, 7, 11, 0.92),
-      rgba(5, 7, 11, 0.97)
+      rgba(5,7,11,0.92),
+      rgba(5,7,11,0.97)
     ),
     url("logo.png");
 
@@ -43,51 +46,72 @@ body {
   width: 100%;
   max-width: 430px;
 
-  background: rgba(13, 18, 29, 0.98);
+  background: rgba(13,18,29,0.98);
 
   border: 1px solid rgba(255,255,255,0.12);
+
   border-radius: 24px;
 
   padding: 26px;
 
-  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.55);
 }
+
+
+/* LOGO */
 
 .guild-logo {
   width: 105px;
   height: 105px;
 
   object-fit: contain;
+
   display: block;
 
   margin: 0 auto 12px;
 }
 
+
+/* TITLE */
+
 h1 {
   text-align: center;
+
   font-size: 23px;
+
   margin: 8px 0;
 }
 
 .subtitle {
   text-align: center;
+
   color: #aab4c7;
+
   font-size: 13px;
 
   margin-bottom: 24px;
 }
 
+
+/* LABEL */
+
 label {
   display: block;
 
   color: #b9c2d3;
+
   font-size: 13px;
 
   margin-bottom: 8px;
 }
 
+
+/* GENDER BUTTONS */
+
 .gender-buttons {
   display: flex;
+
   gap: 10px;
 }
 
@@ -96,15 +120,16 @@ label {
 
   padding: 14px;
 
-  border: none;
+  border: 1px solid #344056;
+
   border-radius: 13px;
 
   background: #080c14;
+
   color: white;
 
-  border: 1px solid #344056;
-
   font-size: 14px;
+
   font-weight: bold;
 
   cursor: pointer;
@@ -112,8 +137,16 @@ label {
 
 .gender-button.active {
   background: #7f8da8;
+
   border-color: #7f8da8;
 }
+
+.gender-button:active {
+  transform: scale(0.97);
+}
+
+
+/* INPUT */
 
 input {
   width: 100%;
@@ -125,6 +158,7 @@ input {
   border: 1px solid #344056;
 
   background: #080c14;
+
   color: white;
 
   font-size: 16px;
@@ -139,6 +173,9 @@ input::placeholder {
 input:focus {
   border-color: #8c9ab5;
 }
+
+
+/* PREVIEW */
 
 .preview {
   margin-top: 20px;
@@ -166,10 +203,14 @@ input:focus {
 
 #result {
   font-size: 22px;
+
   font-weight: bold;
 
   white-space: nowrap;
 }
+
+
+/* COPY BUTTON */
 
 #copyButton {
   width: 100%;
@@ -179,12 +220,15 @@ input:focus {
   padding: 14px;
 
   border: none;
+
   border-radius: 13px;
 
   background: white;
+
   color: #080b12;
 
   font-size: 15px;
+
   font-weight: bold;
 
   cursor: pointer;
@@ -196,8 +240,12 @@ input:focus {
 
 .copy-success {
   background: #7f8da8 !important;
+
   color: white !important;
 }
+
+
+/* INFO */
 
 .info {
   text-align: center;
@@ -209,6 +257,9 @@ input:focus {
   font-size: 11px;
 }
 
+
+/* MOBILE */
+
 @media (max-width: 480px) {
 
   body {
@@ -217,6 +268,7 @@ input:focus {
 
   .card {
     padding: 22px 18px;
+
     border-radius: 20px;
   }
 
@@ -236,7 +288,9 @@ input:focus {
   #result {
     font-size: 19px;
   }
+
 }
+
 
 @media (max-width: 360px) {
 
@@ -256,8 +310,11 @@ input:focus {
   #result {
     font-size: 17px;
   }
+
 }
+
 </style>
+
 </head>
 
 
@@ -265,24 +322,34 @@ input:focus {
 
 <div class="card">
 
+
+  <!-- LOGO -->
+
   <img
     src="logo.png"
     alt="Royal Blood Logo"
     class="guild-logo"
   >
 
+
+  <!-- GUILD NAME -->
+
   <h1>
     ʀᴏʏᴀʟㅤ⚜ㅤʙʟᴏᴏᴅ
   </h1>
+
 
   <div class="subtitle">
     Guild Name Generator
   </div>
 
 
+  <!-- STYLE -->
+
   <label>
     Choose your style
   </label>
+
 
   <div class="gender-buttons">
 
@@ -293,6 +360,7 @@ input:focus {
     >
       ⚜ MALE
     </button>
+
 
     <button
       type="button"
@@ -305,12 +373,15 @@ input:focus {
   </div>
 
 
+  <!-- NAME -->
+
   <label
     for="name"
     style="margin-top:20px;"
   >
     Enter your Free Fire name
   </label>
+
 
   <input
     id="name"
@@ -321,11 +392,14 @@ input:focus {
   >
 
 
+  <!-- PREVIEW -->
+
   <div class="preview">
 
     <div class="preview-title">
       YOUR GUILD NAME
     </div>
+
 
     <div id="result">
       ʀʙㅤ⚜ㅤɴᴀᴍᴇ
@@ -333,6 +407,8 @@ input:focus {
 
   </div>
 
+
+  <!-- COPY -->
 
   <button
     type="button"
@@ -346,6 +422,7 @@ input:focus {
     Official ʀᴏʏᴀʟㅤ⚜ㅤʙʟᴏᴏᴅ name format
   </div>
 
+
 </div>
 
 
@@ -355,27 +432,34 @@ input:focus {
 
 
 /* =========================
-   SETTINGS
+   PREFIXES
 ========================= */
 
-const MALE_PREFIX = "ʀʙㅤ⚜ㅤ";
+const MALE_PREFIX =
+  "ʀʙㅤ⚜ㅤ";
 
-const FEMALE_PREFIX = "ʀʙㅤ❀ㅤ";
+const FEMALE_PREFIX =
+  "ʀʙㅤ❀ㅤ";
 
 
 /* =========================
    ELEMENTS
 ========================= */
 
-const nameInput = document.getElementById("name");
+const nameInput =
+  document.getElementById("name");
 
-const result = document.getElementById("result");
+const result =
+  document.getElementById("result");
 
-const maleButton = document.getElementById("maleBtn");
+const maleButton =
+  document.getElementById("maleBtn");
 
-const femaleButton = document.getElementById("femaleBtn");
+const femaleButton =
+  document.getElementById("femaleBtn");
 
-const copyButton = document.getElementById("copyButton");
+const copyButton =
+  document.getElementById("copyButton");
 
 
 /* =========================
@@ -396,21 +480,25 @@ const SMALL_CAPS = {
   c: "ᴄ",
   d: "ᴅ",
   e: "ᴇ",
+
   f: "ꜰ",
   g: "ɢ",
   h: "ʜ",
   i: "ɪ",
   j: "ᴊ",
+
   k: "ᴋ",
   l: "ʟ",
   m: "ᴍ",
   n: "ɴ",
   o: "ᴏ",
+
   p: "ᴘ",
   q: "q",
   r: "ʀ",
   s: "s",
   t: "ᴛ",
+
   u: "ᴜ",
   v: "ᴠ",
   w: "ᴡ",
@@ -429,20 +517,22 @@ function convertToSmallCaps(name) {
 
   let output = "";
 
+
   for (const character of name) {
 
-    const lowerCharacter =
+    const lower =
       character.toLowerCase();
+
 
     if (
       Object.prototype.hasOwnProperty.call(
         SMALL_CAPS,
-        lowerCharacter
+        lower
       )
     ) {
 
       output +=
-        SMALL_CAPS[lowerCharacter];
+        SMALL_CAPS[lower];
 
     } else {
 
@@ -451,6 +541,7 @@ function convertToSmallCaps(name) {
     }
 
   }
+
 
   return output;
 
@@ -465,20 +556,6 @@ function generateName() {
 
   const typedName =
     nameInput.value.trim();
-
-
-  let prefix;
-
-
-  if (selectedStyle === "male") {
-
-    prefix = MALE_PREFIX;
-
-  } else {
-
-    prefix = FEMALE_PREFIX;
-
-  }
 
 
   if (typedName === "") {
@@ -504,8 +581,17 @@ function generateName() {
     convertToSmallCaps(typedName);
 
 
-  result.textContent =
-    prefix + convertedName;
+  if (selectedStyle === "male") {
+
+    result.textContent =
+      MALE_PREFIX + convertedName;
+
+  } else {
+
+    result.textContent =
+      FEMALE_PREFIX + convertedName;
+
+  }
 
 }
 
@@ -523,8 +609,6 @@ maleButton.addEventListener(
     maleButton.classList.add("active");
 
     femaleButton.classList.remove("active");
-
-    generateName();
 
   }
 );
@@ -544,14 +628,12 @@ femaleButton.addEventListener(
 
     maleButton.classList.remove("active");
 
-    generateName();
-
   }
 );
 
 
 /* =========================
-   ENTER KEY GENERATION
+   ENTER KEY
 ========================= */
 
 nameInput.addEventListener(
@@ -564,12 +646,11 @@ nameInput.addEventListener(
 
       generateName();
 
-      nameInput.blur();
-
     }
 
   }
 );
+
 
 /* =========================
    COPY NAME
@@ -588,12 +669,17 @@ copyButton.addEventListener(
       copyButton.textContent =
         "⚠ ENTER YOUR NAME";
 
-      setTimeout(function () {
 
-        copyButton.textContent =
-          "📋 COPY NAME";
+      setTimeout(
+        function () {
 
-      }, 1800);
+          copyButton.textContent =
+            "📋 COPY NAME";
+
+        },
+        1800
+      );
+
 
       return;
 
@@ -615,20 +701,30 @@ copyButton.addEventListener(
       const temporary =
         document.createElement("textarea");
 
-      temporary.value = finalName;
 
-      temporary.style.position = "fixed";
-      temporary.style.opacity = "0";
+      temporary.value =
+        finalName;
+
+
+      temporary.style.position =
+        "fixed";
+
+      temporary.style.opacity =
+        "0";
+
 
       document.body.appendChild(
         temporary
       );
 
+
       temporary.focus();
 
       temporary.select();
 
+
       document.execCommand("copy");
+
 
       temporary.remove();
 
@@ -638,33 +734,39 @@ copyButton.addEventListener(
     copyButton.textContent =
       "✓ COPIED!";
 
+
     copyButton.classList.add(
       "copy-success"
     );
 
 
-    setTimeout(function () {
+    setTimeout(
+      function () {
 
-      copyButton.textContent =
-        "📋 COPY NAME";
+        copyButton.textContent =
+          "📋 COPY NAME";
 
-      copyButton.classList.remove(
-        "copy-success"
-      );
+        copyButton.classList.remove(
+          "copy-success"
+        );
 
-    }, 1800);
+      },
+      1800
+    );
 
   }
 );
 
 
 /* =========================
-   START GENERATOR
+   INITIAL PREVIEW
 ========================= */
 
-generateName();
+result.textContent =
+  MALE_PREFIX + "ɴᴀᴍᴇ";
 
 </script>
 
 </body>
+
 </html>
