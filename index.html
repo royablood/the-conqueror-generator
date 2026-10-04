@@ -313,7 +313,7 @@ type="text"
 maxlength="20"
 placeholder="Enter your name"
 autocomplete="off"
-oninput="generateName">
+oninput="generateName()">
 
 <div class="preview"><div class="preview-title">
 YOUR GUILD NAME
@@ -328,7 +328,6 @@ onclick="copyName()">
 </button><div class="info">Official ʀᴏʏᴀʟㅤ⚜ㅤʙʟᴏᴏᴅ name format
 
 </div></div><script>
-
 
 /* =====================================
    CURRENT STYLE
@@ -370,13 +369,18 @@ const SMALL_CAPS = {
   "p": "ᴘ",
 
   "q": "q",
+
   "r": "ʀ",
+
   "s": "s",
+
   "t": "ᴛ",
   "u": "ᴜ",
   "v": "ᴠ",
   "w": "ᴡ",
+
   "x": "x",
+
   "y": "ʏ",
   "z": "ᴢ"
 
@@ -472,6 +476,8 @@ function generateName() {
       : FEMALE_PREFIX;
 
 
+  /* Empty input preview */
+
   if (name === "") {
 
     const previewName =
@@ -489,9 +495,13 @@ function generateName() {
   }
 
 
+  /* Convert player's name */
+
   const convertedName =
     convertToSmallCaps(name);
 
+
+  /* Display final result */
 
   result.textContent =
     prefix + convertedName;
@@ -500,7 +510,7 @@ function generateName() {
 
 
 /* =====================================
-   COPY
+   COPY NAME
 ===================================== */
 
 async function copyName() {
