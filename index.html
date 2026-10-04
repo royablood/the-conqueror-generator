@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>ᴛʜᴇㅤᴄᴏɴǫᴜᴇʀᴏʀ</title>
-
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="manifest" href="manifest.json">
-
-<style>
+<title>ʀᴏʏᴀʟㅤ⚜ㅤʙʟᴏᴏᴅ</title><link rel="icon" type="image/png" href="logo.png">
+<link rel="manifest" href="manifest.json"><style>
 
 * {
   box-sizing: border-box;
@@ -125,12 +114,6 @@ input {
   font-size: 16px;
 
   outline: none;
-
-  /*
-    IMPORTANT:
-    Do not transform the input.
-    The generated result handles the style.
-  */
 }
 
 input::placeholder {
@@ -294,106 +277,57 @@ button:hover {
 
 }
 
-</style>
-
-</head>
-
-
-<body>
-
-<div class="card">
-
-<img
+</style></head><body><div class="card"><img
 src="logo.png"
-alt="THE CONQUEROR Logo"
+alt="Royal Blood Logo"
 class="guild-logo">
 
-
 <h1>
-ᴛʜᴇㅤᴄᴏɴǫᴜᴇʀᴏʀ
-</h1>
-
-
-<div class="subtitle">
+ʀᴏʏᴀʟㅤ⚜ㅤʙʟᴏᴏᴅ
+</h1><div class="subtitle">
 Guild Name Generator
-</div>
-
-
-<label>
+</div><label>
 Choose your style
-</label>
-
-
-<div class="gender-buttons">
-
-<button
+</label><div class="gender-buttons"><button
 id="maleBtn"
 class="active"
 onclick="selectStyle('male')">
-⚔ MALE
+⚜ MALE
 </button>
-
 
 <button
 id="femaleBtn"
 onclick="selectStyle('female')">
-♡ FEMALE
+❀ FEMALE
 </button>
 
-</div>
-
-
-<label
+</div><label
 for="name"
 style="margin-top:20px;">
 
 Enter your Free Fire name
 
-</label>
-
-
-<input
+</label><input
 id="name"
 type="text"
 maxlength="20"
 placeholder="Enter your name"
 autocomplete="off"
-oninput="generateName()">
+oninput="generateName">
 
-
-<div class="preview">
-
-<div class="preview-title">
+<div class="preview"><div class="preview-title">
 YOUR GUILD NAME
-</div>
-
-
-<div id="result">
-ᴛᴄㅤɴᴀᴍᴇ
-</div>
-
-</div>
-
-
-<button
+</div><div id="result">
+ʀʙㅤ⚜ㅤɴᴀᴍᴇ
+</div></div><button
 id="copyButton"
 onclick="copyName()">
 
 📋 COPY NAME
 
-</button>
+</button><div class="info">Official ʀᴏʏᴀʟㅤ⚜ㅤʙʟᴏᴏᴅ name format
 
-
-<div class="info">
-
-Official ᴛʜᴇㅤᴄᴏɴǫᴜᴇʀᴏʀ name format
-
-</div>
-
-</div>
-
-
-<script>
+</div></div><script>
 
 
 /* =====================================
@@ -407,9 +341,9 @@ let selectedStyle = "male";
    PREFIXES
 ===================================== */
 
-const MALE_PREFIX = "ᴛᴄㅤ";
+const MALE_PREFIX = "ʀʙㅤ⚜ㅤ";
 
-const FEMALE_PREFIX = "ᴛᴄㅤ♡ㅤ";
+const FEMALE_PREFIX = "ʀʙㅤ❀ㅤ";
 
 
 /* =====================================
@@ -435,31 +369,14 @@ const SMALL_CAPS = {
   "o": "ᴏ",
   "p": "ᴘ",
 
-  /*
-    Unicode has no true small-cap Q.
-    Keep q lowercase.
-  */
   "q": "q",
-
   "r": "ʀ",
-
-  /*
-    Unicode has no true small-cap S.
-    Keep s lowercase.
-  */
   "s": "s",
-
   "t": "ᴛ",
   "u": "ᴜ",
   "v": "ᴠ",
   "w": "ᴡ",
-
-  /*
-    Unicode has no true small-cap X.
-    Keep x lowercase.
-  */
   "x": "x",
-
   "y": "ʏ",
   "z": "ᴢ"
 
@@ -484,11 +401,6 @@ function convertToSmallCaps(name) {
       output += SMALL_CAPS[lower];
 
     } else {
-
-      /*
-        Numbers, spaces and symbols
-        remain unchanged.
-      */
 
       output += character;
 
@@ -550,27 +462,15 @@ function generateName() {
     document.getElementById("result");
 
 
-  /*
-    Get exactly what the player typed.
-  */
-
   const name =
     input.value.trim();
 
-
-  /*
-    Choose the correct prefix.
-  */
 
   const prefix =
     selectedStyle === "male"
       ? MALE_PREFIX
       : FEMALE_PREFIX;
 
-
-  /*
-    Show preview if no name entered.
-  */
 
   if (name === "") {
 
@@ -589,18 +489,9 @@ function generateName() {
   }
 
 
-  /*
-    Convert the player's name
-    directly into small-cap Unicode.
-  */
-
   const convertedName =
     convertToSmallCaps(name);
 
-
-  /*
-    Final guild name.
-  */
 
   result.textContent =
     prefix + convertedName;
@@ -707,8 +598,4 @@ async function copyName() {
 
 generateName();
 
-</script>
-
-</body>
-
-</html>
+</script></body></html>
