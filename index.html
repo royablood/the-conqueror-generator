@@ -610,6 +610,12 @@ maleButton.addEventListener(
 
     femaleButton.classList.remove("active");
 
+    if (result.textContent !== MALE_PREFIX + "ɴᴀᴍᴇ") {
+
+      generateName();
+
+    }
+
   }
 );
 
@@ -627,6 +633,12 @@ femaleButton.addEventListener(
     femaleButton.classList.add("active");
 
     maleButton.classList.remove("active");
+
+    if (result.textContent !== FEMALE_PREFIX + "ꜰᴇᴍᴀʟᴇɴᴀᴍᴇ") {
+
+      generateName();
+
+    }
 
   }
 );
