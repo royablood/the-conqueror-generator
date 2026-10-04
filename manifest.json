@@ -1,12 +1,12 @@
 {
-  "background_color": "#ffffff",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "THEㅤ⚔ㅤCONQUEROR",
-  "orientation": "portrait",
-  "scope": "/",
-  "short_name": "CONQUEROR",
-  "start_url": "https://theconqueror328.github.io/the-conqueror-generator/",
-  "theme_color": "#ffffff",
-  "description": "Official THEㅤ⚔ㅤCONQUEROR Guild Name Generator"
+"background_color": "#ffffff",
+"dir": "ltr",
+"display": "standalone",
+"name": "ʀᴏʏᴀʟㅤ⚜ㅤʙʟᴏᴏᴅ",
+"orientation": "portrait",
+"scope": "/the-conqueror-generator/",
+"start_url": "https://royablood.github.io/the-conqueror-generator/",
+"theme_color": "#ffffff",
+"short_name": "ROYAL BLOOD",
+"description": "Official ʀᴏʏᴀʟㅤ⚜ㅤʙʟᴏᴏᴅ Guild Name Generator"
 }
