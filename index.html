@@ -19,13 +19,10 @@
 body {
   margin: 0;
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 16px;
-
   font-family: Arial, sans-serif;
   color: white;
 
@@ -45,13 +42,9 @@ body {
 .card {
   width: 100%;
   max-width: 430px;
-
   background: rgba(13,18,29,0.98);
-
   border: 1px solid rgba(255,255,255,0.12);
-
   border-radius: 24px;
-
   padding: 26px;
 
   box-shadow:
@@ -64,11 +57,8 @@ body {
 .guild-logo {
   width: 105px;
   height: 105px;
-
   object-fit: contain;
-
   display: block;
-
   margin: 0 auto 12px;
 }
 
@@ -77,19 +67,14 @@ body {
 
 h1 {
   text-align: center;
-
   font-size: 23px;
-
   margin: 8px 0;
 }
 
 .subtitle {
   text-align: center;
-
   color: #aab4c7;
-
   font-size: 13px;
-
   margin-bottom: 24px;
 }
 
@@ -98,11 +83,8 @@ h1 {
 
 label {
   display: block;
-
   color: #b9c2d3;
-
   font-size: 13px;
-
   margin-bottom: 8px;
 }
 
@@ -111,33 +93,23 @@ label {
 
 .gender-buttons {
   display: flex;
-
   gap: 10px;
 }
 
 .gender-button {
   flex: 1;
-
   padding: 14px;
-
   border: 1px solid #344056;
-
   border-radius: 13px;
-
   background: #080c14;
-
   color: white;
-
   font-size: 14px;
-
   font-weight: bold;
-
   cursor: pointer;
 }
 
 .gender-button.active {
   background: #7f8da8;
-
   border-color: #7f8da8;
 }
 
@@ -150,19 +122,12 @@ label {
 
 input {
   width: 100%;
-
   padding: 15px;
-
   border-radius: 13px;
-
   border: 1px solid #344056;
-
   background: #080c14;
-
   color: white;
-
   font-size: 16px;
-
   outline: none;
 }
 
@@ -175,37 +140,55 @@ input:focus {
 }
 
 
+/* GENERATE BUTTON */
+
+#generateButton {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px;
+  border: none;
+  border-radius: 13px;
+  background: #7f8da8;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+#generateButton:active {
+  transform: scale(0.97);
+}
+
+#generateButton:hover {
+  opacity: 0.92;
+}
+
+
 /* PREVIEW */
 
 .preview {
   margin-top: 20px;
-
   padding: 22px 10px;
-
   background: #080c14;
-
   border: 1px solid #344056;
-
   border-radius: 16px;
-
   text-align: center;
-
   overflow-x: auto;
 }
 
 .preview-title {
   color: #8792a7;
-
   font-size: 12px;
-
   margin-bottom: 10px;
 }
 
 #result {
   font-size: 22px;
-
   font-weight: bold;
-
   white-space: nowrap;
 }
 
@@ -214,23 +197,14 @@ input:focus {
 
 #copyButton {
   width: 100%;
-
   margin-top: 14px;
-
   padding: 14px;
-
   border: none;
-
   border-radius: 13px;
-
   background: white;
-
   color: #080b12;
-
   font-size: 15px;
-
   font-weight: bold;
-
   cursor: pointer;
 }
 
@@ -240,7 +214,6 @@ input:focus {
 
 .copy-success {
   background: #7f8da8 !important;
-
   color: white !important;
 }
 
@@ -249,11 +222,8 @@ input:focus {
 
 .info {
   text-align: center;
-
   margin-top: 18px;
-
   color: #778298;
-
   font-size: 11px;
 }
 
@@ -268,7 +238,6 @@ input:focus {
 
   .card {
     padding: 22px 18px;
-
     border-radius: 20px;
   }
 
@@ -287,6 +256,12 @@ input:focus {
 
   #result {
     font-size: 19px;
+  }
+
+  #generateButton,
+  #copyButton {
+    font-size: 14px;
+    padding: 14px;
   }
 
 }
@@ -373,7 +348,7 @@ input:focus {
   </div>
 
 
-  <!-- NAME -->
+  <!-- NAME INPUT -->
 
   <label
     for="name"
@@ -392,6 +367,16 @@ input:focus {
   >
 
 
+  <!-- GENERATE BUTTON -->
+
+  <button
+    type="button"
+    id="generateButton"
+  >
+    ⚡ GENERATE NAME
+  </button>
+
+
   <!-- PREVIEW -->
 
   <div class="preview">
@@ -408,7 +393,7 @@ input:focus {
   </div>
 
 
-  <!-- COPY -->
+  <!-- COPY BUTTON -->
 
   <button
     type="button"
@@ -457,6 +442,9 @@ const maleButton =
 
 const femaleButton =
   document.getElementById("femaleBtn");
+
+const generateButton =
+  document.getElementById("generateButton");
 
 const copyButton =
   document.getElementById("copyButton");
@@ -517,12 +505,10 @@ function convertToSmallCaps(name) {
 
   let output = "";
 
-
   for (const character of name) {
 
     const lower =
       character.toLowerCase();
-
 
     if (
       Object.prototype.hasOwnProperty.call(
@@ -531,8 +517,7 @@ function convertToSmallCaps(name) {
       )
     ) {
 
-      output +=
-        SMALL_CAPS[lower];
+      output += SMALL_CAPS[lower];
 
     } else {
 
@@ -541,7 +526,6 @@ function convertToSmallCaps(name) {
     }
 
   }
-
 
   return output;
 
@@ -557,29 +541,29 @@ function generateName() {
   const typedName =
     nameInput.value.trim();
 
-
   if (typedName === "") {
 
-    if (selectedStyle === "male") {
+    generateButton.textContent =
+      "⚠ ENTER YOUR NAME";
 
-      result.textContent =
-        MALE_PREFIX + "ɴᴀᴍᴇ";
+    setTimeout(
+      function () {
 
-    } else {
+        generateButton.textContent =
+          "⚡ GENERATE NAME";
 
-      result.textContent =
-        FEMALE_PREFIX + "ꜰᴇᴍᴀʟᴇɴᴀᴍᴇ";
+      },
+      1800
+    );
 
-    }
+    nameInput.focus();
 
     return;
 
   }
 
-
   const convertedName =
     convertToSmallCaps(typedName);
-
 
   if (selectedStyle === "male") {
 
@@ -597,6 +581,20 @@ function generateName() {
 
 
 /* =========================
+   GENERATE BUTTON
+========================= */
+
+generateButton.addEventListener(
+  "click",
+  function () {
+
+    generateName();
+
+  }
+);
+
+
+/* =========================
    MALE BUTTON
 ========================= */
 
@@ -609,12 +607,6 @@ maleButton.addEventListener(
     maleButton.classList.add("active");
 
     femaleButton.classList.remove("active");
-
-    if (result.textContent !== MALE_PREFIX + "ɴᴀᴍᴇ") {
-
-      generateName();
-
-    }
 
   }
 );
@@ -633,12 +625,6 @@ femaleButton.addEventListener(
     femaleButton.classList.add("active");
 
     maleButton.classList.remove("active");
-
-    if (result.textContent !== FEMALE_PREFIX + "ꜰᴇᴍᴀʟᴇɴᴀᴍᴇ") {
-
-      generateName();
-
-    }
 
   }
 );
@@ -675,12 +661,10 @@ copyButton.addEventListener(
     const typedName =
       nameInput.value.trim();
 
-
     if (typedName === "") {
 
       copyButton.textContent =
         "⚠ ENTER YOUR NAME";
-
 
       setTimeout(
         function () {
@@ -692,6 +676,7 @@ copyButton.addEventListener(
         1800
       );
 
+      nameInput.focus();
 
       return;
 
@@ -713,10 +698,8 @@ copyButton.addEventListener(
       const temporary =
         document.createElement("textarea");
 
-
       temporary.value =
         finalName;
-
 
       temporary.style.position =
         "fixed";
@@ -724,19 +707,15 @@ copyButton.addEventListener(
       temporary.style.opacity =
         "0";
 
-
       document.body.appendChild(
         temporary
       );
-
 
       temporary.focus();
 
       temporary.select();
 
-
       document.execCommand("copy");
-
 
       temporary.remove();
 
@@ -745,7 +724,6 @@ copyButton.addEventListener(
 
     copyButton.textContent =
       "✓ COPIED!";
-
 
     copyButton.classList.add(
       "copy-success"
